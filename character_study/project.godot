@@ -11,7 +11,15 @@ config_version=4
 [application]
 
 config/name="character_study"
+run/main_scene="res://scenes/World.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=256
+window/size/height=150
+window/size/test_width=1024
+window/size/test_height=600
 
 [gui]
 

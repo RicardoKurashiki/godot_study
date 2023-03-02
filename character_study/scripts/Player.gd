@@ -4,11 +4,13 @@ export var speed : int = 150
 
 var velocity = Vector2.ZERO
 
+onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var animation_tree : AnimationTree = $AnimationTree
 onready var animation_mode = animation_tree.get("parameters/playback")
 
 func _ready():
-	animation_tree.active = true
+	animation_player.playback_active = true
+	animation_mode.start("Move")
 
 func _physics_process(delta):
 	horizontal_movement()
@@ -26,5 +28,4 @@ func vertical_movement():
 
 func animation_handler():
 	var direction := Input.get_vector("ui_left", "ui_right","ui_up","ui_down")
-	animation_mode.start("Move")
 	animation_tree.set("parameters/Move/blend_position", direction)

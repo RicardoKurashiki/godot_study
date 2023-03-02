@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Building" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 272, 144 )
+
+[node name="Building2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 64, 71 )
+
+[node name="KinematicBody2D" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 123, 34 )
