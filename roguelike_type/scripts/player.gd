@@ -10,13 +10,15 @@ func move_handler():
 	_horizontal_handler()
 	_vertical_handler()
 
-func aim_handler():
+func gun_handler():
 	gun.aim(position)
+	if (Input.is_action_just_pressed("shoot")):
+		gun.shoot(position)
 
 # == Private Methods == #
 func _physics_process(_delta):
 	move_handler()
-	aim_handler()
+	gun_handler()
 	move_and_slide()
 
 func _horizontal_handler():
